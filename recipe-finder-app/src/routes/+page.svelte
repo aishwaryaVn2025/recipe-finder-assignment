@@ -226,6 +226,19 @@
 		<p class="message">{message}</p>
 	{/if}
 
+    <div class="featured-section">
+	<h2>Featured Recipe</h2>
+
+	<recipe-card
+		name="Chicken Curry"
+		image="https://www.themealdb.com/images/media/meals/1529446352.jpg"
+		category="Chicken"
+		onrecipeSelected={() => alert('Featured recipe selected')}
+	>
+		<p>This recipe card is created using StencilJS.</p>
+	</recipe-card>
+</div>
+
 	<!-- API Recipes -->
 	{#if recipes.length > 0}
 
