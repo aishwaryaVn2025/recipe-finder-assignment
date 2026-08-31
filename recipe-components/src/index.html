@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+
+    <title>Recipe Components</title>
+
+    <script type="module" src="/build/recipe-components.esm.js"></script>
+    <script nomodule src="/build/recipe-components.js"></script>
+  </head>
+
+  <body>
+    <recipe-card
+      name="Chicken Curry"
+      category="Chicken"
+      image="https://www.themealdb.com/images/media/meals/1529446352.jpg"
+    >
+      <p>This content is coming through the slot.</p>
+    </recipe-card>
+
+    <script>
+      const card = document.querySelector('recipe-card');
+
+      card.addEventListener('recipeSelected', (event) => {
+        alert('Selected recipe: ' + event.detail);
+      });
+    </script>
+  </body>
+</html>
