@@ -4,8 +4,15 @@
 	let { children } = $props();
 
 	onMount(async () => {
-		const { defineCustomElements } = await import('@aishwarya-vn/recipe-components/loader');
-		defineCustomElements();
+		try {
+			const { defineCustomElements } = await import(
+				'@aishwarya-vn/recipe-components/loader'
+			);
+
+			defineCustomElements(window);
+		} catch (error) {
+			console.error('Stencil component could not load:', error);
+		}
 	});
 </script>
 
